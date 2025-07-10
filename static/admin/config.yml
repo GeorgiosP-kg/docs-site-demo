@@ -3,53 +3,41 @@ backend:
   branch: main
   repo: GeorgiosP-kg/docs-site-demo
 
-# These lines should *not* be indented
-media_folder: "static/img" # Media files will be stored in the repo under static/images/uploads
-public_folder: "/img/" # The src attribute for uploaded media will begin with /images/uploads
+# Media files will be stored in the repo under static/img
+media_folder: "static/img"
+# The src attribute for uploaded media will begin with /img/
+public_folder: "/img/"
 
 collections:
-  - name: blog
+  - name: "blog"
     label: "Blog"
-    folder: blog
+    folder: "blog"
+    create: true
+    # Filename template, e.g., YYYY-MM-DD-title.md
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     identifier_field: title
     extension: md
-    widget: "list"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields:
-      - { name: title, label: Title, widget: string }
-      - { name: body, label: Body, widget: markdown }
-      - { name: slug, label: Slug, widget: string }
-      - label: "Tags"
-        name: "tags"
-        widget: "list"
-      - label: "Authors"
-        name: "authors"
-        widget: "list"
-        fields:
-          - { name: name, label: Name, widget: string }
-          - { name: title, label: Title, widget: string }
-          - { name: url, label: URL, widget: string }
-          - { name: imageUrl, label: ImageURL, widget: string }
-  
-  - name: docs
-    label: "Documentation"
-    folder: docs/tutorial-basics/
-    extension: md
-    widget: "list"
-    create: true
-    fields:
+    fields: # Fields for the blog collection
       - { name: title, label: Title, widget: string }
       - { name: body, label: Body, widget: markdown }
       - { name: slug, label: Slug, widget: string }
 
-  - name: docs-extras
-    label: "Documentation Extras"
-    folder: docs/tutorial-extras/
-    extension: md
-    widget: "list"
+  - name: "docs"
+    label: "Documentation"
+    folder: "docs/tutorial-basics/"
     create: true
-    fields:
+    extension: md
+    fields: # Fields for the docs collection
+      - { name: title, label: Title, widget: string }
+      - { name: body, label: Body, widget: markdown }
+      - { name: slug, label: Slug, widget: string }
+
+  - name: "docs-extras"
+    label: "Documentation Extras"
+    folder: "docs/tutorial-extras/"
+    create: true
+    extension: md
+    fields: # Fields for the docs-extras collection
       - { name: title, label: Title, widget: string }
       - { name: body, label: Body, widget: markdown }
       - { name: slug, label: Slug, widget: string }
