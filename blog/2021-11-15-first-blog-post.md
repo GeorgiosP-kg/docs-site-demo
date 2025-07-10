@@ -1,5 +1,5 @@
 ---
-title: First Blog Post Edited!
+title: First Blog Post
 slug: first-blog-post
 tags:
   - foo
