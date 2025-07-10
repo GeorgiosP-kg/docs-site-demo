@@ -20,13 +20,13 @@
 
   ## more info on configuring this file: https://ntl.fyi/file-based-build-config
 
-# Admin redirect for Netlify CMS
-[[redirects]]
-  from = "/admin"
-  to = "/admin/index.html"
-  status = 200
+# Admin redirect for CMS
+# [[redirects]]
+#  from = "/admin"
+#  to = "/admin/index.html"
+#  status = 200
 
-[[redirects]]
-  from = "/admin/*"
-  to = "/admin/index.html"
-  status = 200
+#[[redirects]]
+#  from = "/admin/*"
+#  to = "/admin/index.html"
+#  status = 200

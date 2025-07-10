@@ -42,3 +42,14 @@ collections:
       - { name: title, label: Title, widget: string }
       - { name: body, label: Body, widget: markdown }
       - { name: slug, label: Slug, widget: string }
+
+  - name: docs-extras
+    label: "Documentation Extras"
+    folder: docs/tutorial-extras/
+    extension: md
+    widget: "list"
+    create: true
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: body, label: Body, widget: markdown }
+      - { name: slug, label: Slug, widget: string }
